@@ -14,10 +14,16 @@ If Disk utility lists a large amount of purgeable data, try filling up the hard 
 
 and `cp`ing this file as necessary. OSX won't let the main drive be partitioned if Time Machine is running. Run
 
-```sudo tmutil disable```
+```tmutil disable```
 
-Then partition the drive with Disk Utility. It may also be a good idea to remove the local Time Machine snapshots by running
+as sudo, then partition the drive with Disk Utility. It may also be a good idea to remove the local Time Machine snapshots by running
 
 ```tmutil thinlocalsnapshots / 10000000000 1```
 
 if Disk utility is stubborn and doesn't let the drive be partitioned.
+
+Make sure to re-enable Time Machine with
+
+```tmutil enable```
+
+as sudo.
