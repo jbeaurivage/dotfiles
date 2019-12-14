@@ -10,15 +10,19 @@ Make sure to have a back up of OSX. Use Time Machine if necessary.
 First step is to create a partition for Linux to run on.
 If Disk utility lists a large amount of purgeable data, try filling up the hard drive to almost full capacity by running
 
-```dd if=/dev/random of=/my/large/file bs=32m```
+```dd if=/dev/random of=/my/large/file bs=100m```
 
 and `cp`ing this file as necessary. OSX won't let the main drive be partitioned if Time Machine is running. Run
 
 ```tmutil disable```
 
-as sudo, then partition the drive with Disk Utility. It may also be a good idea to remove the local Time Machine snapshots by running
+Then partition the drive with Disk Utility. It may also be a good idea to remove the local Time Machine snapshots by running
+
+```tmutil listlocalsnapshots```
 
 ```tmutil thinlocalsnapshots / 10000000000 1```
+
+```tmutil deletelocalsnapshots (date)``
 
 if Disk utility is stubborn and doesn't let the drive be partitioned.
 
@@ -26,4 +30,7 @@ Make sure to re-enable Time Machine with
 
 ```tmutil enable```
 
-as sudo.
+Start Disk utility and create a new partition for the linux install.
+
+## 3. Installing Manjaro
+Boot on the live USB. Insatll Manjaro. Make sure there's at least a 20GB partition on /.
