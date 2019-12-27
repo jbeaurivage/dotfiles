@@ -100,7 +100,7 @@ Allocate file for swapfile
 
 Mark file as swap space and enable
 
-```$ mkswap /swapfile && swapon /swapfile``
+```$ mkswap /swapfile && swapon /swapfile```
 
 Check
 
@@ -125,5 +125,11 @@ Install thermald and tlpui
 Enable thermald and tlpui
 
 ```$ systemctl enable --now tlp```
+
 ```$ systemctl enable --now tlp-sleep.service```
+
 ```$ systemctl enable --now thermald```
+
+## 9. Resetting touchpad after hibernating
+
+```/etc/systemd/system/my_user_script.service```
