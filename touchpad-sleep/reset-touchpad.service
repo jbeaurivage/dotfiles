@@ -1,0 +1,11 @@
+[Unit]
+Description=Run reset-touchpad-all
+After=hibernate.target hybrid-sleep.target
+
+[Service]
+ExecStart=/home/justinb/bin/reset-touchpad-all.sh
+User=justinb
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=hibernate.target hybrid-sleep.target

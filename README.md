@@ -132,4 +132,7 @@ Enable thermald and tlpui
 
 ## 9. Resetting touchpad after hibernating
 
-```/etc/systemd/system/my_user_script.service```
+Put ```touchpad-sleep/reset-touchpad-lock.sh``` in the autostart scripts at startup.
+
+## 10. Fixing the NetworkManager bug
+Copy the contents of ```networkmanager-fix/NetworkManager.conf``` into ```/etc/NetworkManager/NetworkManager.conf```
