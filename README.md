@@ -1,4 +1,4 @@
-# Manjaro on Mac
+M# Manjaro on Mac
 
 This repo lists notes for setting up and installing Manjaro Linux on a MacBook Air (13-inch, Mid 2013).
 The machine is running macOS Mojave 10.14.6 (18G1012) at time of install.
@@ -50,7 +50,7 @@ Add user to the input group:
 
 ```$ sudo gpasswd -a $USER input```
 
-Upgrade kernel: start Manjaro Settings Manager, download the latest LTS kernel (linux-5.4 if desired). Reboot into Manjaro, holding Esc during boot sequence. Select desired kernel and restart.
+Upgrade kernel: start Manjaro Settings Manager, download the latest LTS kernel (linux-54 if desired). Reboot into Manjaro, holding Esc during boot sequence. Select desired kernel and restart.
 
 ## 6. Install zsh, oh-my-zsh and z
 
@@ -58,12 +58,18 @@ Upgrade kernel: start Manjaro Settings Manager, download the latest LTS kernel (
 
 ```wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/z.sh```
 
-## 5. Install the wifi drivers
+Copy ```zsh/agnoster-short.zsh-theme``` to ```~/.oh-my-zsh/themes/```
+
+Copy ```zsh/.zshrc``` to the home folder and edit the export on line 2.
+
+## 5. Install the wifi drivers and fix the NetworkManager bug
 ```$ yay -S linux-headers broadcom-wl-dkms```
 
 ```$ rmmod b43 b43legacy ssb bcm43xx brcm80211 brcmfmac brcmsmac bcma wl```
 
 ```$ modprobe wl```
+
+Copy the contents of ```networkmanager-fix/NetworkManager.conf``` into ```/etc/NetworkManager/NetworkManager.conf```
 
 
 ## 6. Split root partition and /home
@@ -73,7 +79,7 @@ Add the partition to fstab: Start by searching the UUID:
 
 ```$ sudo blkid```
 
-Add thissudo gpasswd -a $USER input line to ```/etc/fstab```
+Add this line to ```/etc/fstab```
 
 ```UUID=<UUID> /home ext4 nodev,nosuid 0 2```
 
@@ -134,5 +140,3 @@ Enable thermald and tlpui
 
 Put ```touchpad-sleep/reset-touchpad-lock.sh``` in the autostart scripts at startup.
 
-## 10. Fixing the NetworkManager bug
-Copy the contents of ```networkmanager-fix/NetworkManager.conf``` into ```/etc/NetworkManager/NetworkManager.conf```
