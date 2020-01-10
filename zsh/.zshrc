@@ -11,12 +11,12 @@ DEFAULT_USER="true"
 ENABLE_CORRECTION="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git battery jump z)
+plugins=(git battery jump)
 
 source $ZSH/oh-my-zsh.sh
 
-# Include Z
-. ~/.z.sh
+# Autojump
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder

@@ -38,9 +38,11 @@ Boot on the live USB. Insatll Manjaro. Use "Replace partition", Manjaro will ins
 ## 4. Update repo mirrors, packages and install basic utilities
 ```$ pacman-mirrors -f```
 
-```$ pacman -S gparted yay libinput-gestures```
+```$ pacman -Syyu```
 
-```$ yay -Syyu ```
+```$ pacman -S yay```
+
+```$ yay -S gparted libinput-gestures autojump```
 
 Enable libinput-gestures autostart:
 
