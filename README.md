@@ -1,4 +1,4 @@
-M# Manjaro on Mac
+# Manjaro on Mac
 
 This repo lists notes for setting up and installing Manjaro Linux on a MacBook Air (13-inch, Mid 2013).
 The machine is running macOS Mojave 10.14.6 (18G1012) at time of install.
