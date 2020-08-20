@@ -14,7 +14,7 @@ ENABLE_CORRECTION="true"
 GTK_USE_PORTAL=1
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git battery jump zsh-syntax-highlighting)
+plugins=(git battery jump zsh-syntax-highlighting rustup)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,6 +41,11 @@ alias lsl="ls -l"
 alias lsaa="ls -a1FG"
 alias lsg="ls | grep"
 alias lsga="ls -a | grep"
+
+alias exa="exa -1FG"
+alias exaa="exa -a1FG"
+alias exal="exa -l"
+alias exab="exa -lb"
 
 # cd and pushd
 alias pd="pushd"
