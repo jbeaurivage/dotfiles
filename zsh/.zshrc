@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/justinb/.oh-my-zsh
+export ZSH="/$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 ZSH_THEME="agnoster-short"
@@ -9,9 +9,6 @@ DEFAULT_USER="true"
 
 # Enable command auto-correction.
 ENABLE_CORRECTION="true"
-
-# Enable xdg-portal for native file browser (e.g. firefox)
-GTK_USE_PORTAL=1
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git battery jump zsh-syntax-highlighting rustup)
@@ -26,6 +23,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Folder shortcuts
 bbgps="/home/justinb/wearable-avionics/blackbox-gps"
+bbpcb="/home/justinb/wearable-avionics/blackbox-pcb"
+cours="/home/justinb/Documents/Ecole/Cours"
 
 ################
 # User aliases #
@@ -99,7 +98,7 @@ export VISUAL=nano
 export EDITOR="$VISUAL"
 
 # mkdir auto cd
-function mkdircd (){
+function mcd (){
     mkdir -p -- "$1" &&
       cd -P -- "$1"
 }
