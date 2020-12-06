@@ -30,6 +30,10 @@ cours="/home/justinb/Documents/Ecole/Cours"
 # User aliases #
 ################
 
+# Zypper
+alias zyp="zypper"
+alias sz="sudo zypper"
+
 # rm and ls
 alias rmi="rm -i"
 alias rmr="rm -r"
@@ -41,11 +45,6 @@ alias lsaa="ls -a1FG"
 alias lsg="ls | grep"
 alias lsga="ls -a | grep"
 
-alias exa="exa -1FG"
-alias exaa="exa -a1FG"
-alias exal="exa -l"
-alias exab="exa -lb"
-
 # cd and pushd
 alias pd="pushd"
 
@@ -54,9 +53,6 @@ alias psg="ps aux | grep"
 
 # push line key binding
 bindkey '^L' push-line
-
-# delete line buffer
-bindkey ^K kill-buffer
 
 # clear
 alias c="clear"
@@ -80,11 +76,15 @@ function kt(){
     kate $1 &>/dev/null &
 }
 
+function skt(){
+    kdesu kate $1 &>/dev/null &
+}
+
 function o(){
     xdg-open $1 &>/dev/null &
 }
 
-alias op="o ."
+alias op="dolphin . &>/dev/null &"
 
 alias zshconfig="kt ~/.zshrc"
 
