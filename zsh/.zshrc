@@ -22,9 +22,9 @@ source $ZSH/oh-my-zsh.sh
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Folder shortcuts
-bbgps="/home/justinb/wearable-avionics/blackbox-gps"
-bbpcb="/home/justinb/wearable-avionics/blackbox-pcb"
-cours="/home/justinb/Documents/Ecole/Cours"
+bbsrc="$HOME/blacbox-gps/blackbox-src"
+bbpcb="$HOME/blackbox-gps/blackbox-pcb"
+
 
 ################
 # User aliases #
@@ -86,11 +86,13 @@ function o(){
 
 alias op="dolphin . &>/dev/null &"
 
-alias zshconfig="kt ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 
 # Change vim path
 alias svim='sudo vim'
 alias snano='sudo nano'
+alias nv='nvim'
+alias snv='sudo nv'
 
 # Editors
 export GIT_EDITOR=nano
