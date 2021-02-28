@@ -1,0 +1,34 @@
+session_name: blackbox-rust
+windows: 
+- window_name: fw
+  layout: main-vertical
+  shell_command_before:
+  - cd $HOME/blackbox-rust/blackbox-gps-firmware
+  - clear
+  panes:
+  - null
+  - null
+- window_name: bsp
+  layout: main-vertical
+  shell_command_before:
+  - cd $HOME/blackbox-rust/blackbox-gps-bsp
+  - clear
+  panes:
+  - null
+  - null
+- window_name: bma
+  layout: main-vertical
+  shell_command_before:
+  - cd $HOME/blackbox-rust/bma423
+  - clear
+  panes:
+  - null
+  - null
+- window_name: bmp
+  layout: main-vertical
+  shell_command_before:
+  - cd $HOME/blackbox-rust/bmp388
+  - clear
+  panes:
+  - null
+  - null

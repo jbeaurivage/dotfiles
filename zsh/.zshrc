@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/$HOME/.oh-my-zsh"
 
+# Enable tmuxp
+export DISABLE_AUTO_TITLE='true'
+
 # Set name of the theme to load.
 ZSH_THEME="agnoster-short"
 
