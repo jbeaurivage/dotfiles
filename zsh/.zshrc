@@ -90,6 +90,8 @@ function o(){
 alias op="dolphin . &>/dev/null &"
 
 alias zshconfig="nvim ~/.zshrc"
+alias vimconfig="nvim ~/.config/nvim/init.vim"
+
 
 # Change vim path
 alias svim='sudo vim'
@@ -98,8 +100,8 @@ alias nv='nvim'
 alias snv='sudo nv'
 
 # Editors
-export GIT_EDITOR=nano
-export VISUAL=nano
+export GIT_EDITOR=nvim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # mkdir auto cd

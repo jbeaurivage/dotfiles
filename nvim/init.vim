@@ -57,6 +57,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'feat/lsp-316', 'do': 'yarn install --froze
 
 " tmux navigation
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'kshenoy/vim-signature'
 
 " Install nvcode (Dark+) theme and treesitter
 " Plug 'christianchiarulli/nvcode-color-schemes.vim'
@@ -249,5 +250,8 @@ inoremap <Down> <nop>
 nnoremap <Left> <nop>
 inoremap <Left> <nop>
 
-nnoremap <Right <nop>
+nnoremap <Right> <nop>
 inoremap <Right> <nop>
+
+" Prompt -> go to buffer
+nnoremap gb :ls<CR>:b<Space>
