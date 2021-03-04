@@ -114,3 +114,5 @@ function cdir (){
 	cd $(dirname $1)
 }
 
+# Enable VIM mode in zsh
+bindkey -v
