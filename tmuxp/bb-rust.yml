@@ -3,35 +3,35 @@ windows:
 - window_name: fw
   layout: main-vertical
   shell_command_before:
-  - cd $HOME/blackbox-rust/blackbox-gps-firmware
+  - cd $HOME/blackbox-rust/bbgps-fw
   - clear
   panes:
   - null
   - null
-- window_name: bsp
+- window_name: bsc
   layout: main-vertical
   shell_command_before:
-  - cd $HOME/blackbox-rust/blackbox-gps-bsp
+  - cd $HOME/blackbox-rust/bbgps-fw/bbgps-bsc
   - clear
   panes:
   - null
   - null
-- window_name: bma
+- window_name: bosch
   layout: main-vertical
   shell_command_before:
-  - cd $HOME/blackbox-rust/bma423
+  - cd $HOME/blackbox-rust/bosch-sensor
   - clear
   panes:
   - null
   - null
-- window_name: bmp
+- window_name: atsamd
   layout: main-vertical
   shell_command_before:
-  - cd $HOME/blackbox-rust/bmp388
-  - clear
+    - cd $HOME/blackbox-rust/atsamd
+    - clear
   panes:
-  - null
-  - null
+    - null
+    - null
 - window_name: docker
   layout: main-vertical
   shell_command_before:
