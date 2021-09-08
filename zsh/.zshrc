@@ -14,7 +14,7 @@ DEFAULT_USER="true"
 ENABLE_CORRECTION="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git battery jump zsh-syntax-highlighting rustup ssh-agent)
+plugins=(git battery invoke jump zsh-syntax-highlighting rustup ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
