@@ -3,39 +3,28 @@ windows:
 - window_name: fw
   layout: main-vertical
   shell_command_before:
-  - cd $HOME/blackbox-rust/bbgps-fw
+  - cd $HOME/expedite-rust/expgps-fw
   - clear
   panes:
-  - null
-  - null
-- window_name: bsc
-  layout: main-vertical
-  shell_command_before:
-  - cd $HOME/blackbox-rust/bbgps-fw/bbgps-bsc
-  - clear
-  panes:
-  - null
   - null
 - window_name: bosch
   layout: main-vertical
   shell_command_before:
-  - cd $HOME/blackbox-rust/bosch-sensor
+  - cd $HOME/expedite-rust/bosch-sensor
   - clear
   panes:
-  - null
   - null
 - window_name: atsamd
   layout: main-vertical
   shell_command_before:
-    - cd $HOME/blackbox-rust/atsamd
+    - cd $HOME/expedite-rust/atsamd
     - clear
   panes:
-    - null
     - null
 - window_name: docker
   layout: main-vertical
   shell_command_before:
-  - cd $HOME/blackbox-rust
+  - cd $HOME/docker-arm-dev
   - docker-run
   panes:
   - null

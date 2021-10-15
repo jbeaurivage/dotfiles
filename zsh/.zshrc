@@ -14,7 +14,7 @@ DEFAULT_USER="true"
 ENABLE_CORRECTION="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git battery invoke jump zsh-syntax-highlighting rustup ssh-agent)
+plugins=(git battery cargo invoke jump zsh-syntax-highlighting rustup ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,6 +73,9 @@ alias cpwd='pwd | clip'
 
 # Get IP addr
 alias publicip="curl icanhazip.com"
+
+# Disable autocorrect
+alias cargo="nocorrect cargo"
 
 # apps
 function kt(){

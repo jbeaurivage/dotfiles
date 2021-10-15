@@ -34,6 +34,10 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing extra messages when using completion
 set shortmess+=c
 
+" NOTE: If barbar's option dict isn't created yet, create it
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.icons=v:false
+
 " Find out the highlight group via F10
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -55,34 +59,97 @@ Plug 'itchyny/vim-gitbranch'
 " Language server
 Plug 'neoclide/coc.nvim', {'branch': 'feat/lsp-316', 'do': 'yarn install --frozen-lockfile' }
 
+" Rust tools
+Plug 'neovim/nvim-lspconfig'
+Plug 'simrat39/rust-tools.nvim'
+
 " tmux navigation
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kshenoy/vim-signature'
 
-" Install nvcode (Dark+) theme and treesitter
-" Plug 'christianchiarulli/nvcode-color-schemes.vim'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Smooth scrolling
+Plug 'psliwka/vim-smoothie'
 
-" Rust syntax highliting
-" Plug 'rust-lang/rust.vim'
-" Plug 'arzg/vim-rust-syntax-ext'
-
-" File explorer with icons
-" Plug 'preservim/nerdtree'
-" Plug 'ryanoasis/vim-devicons'
+" Install barbar
+" Plug 'romgrk/barbar.nvim'
 
 " Initialize plugin system
 call plug#end()
 
-" configure treesitter
-"lua << EOF
-"require'nvim-treesitter.configs'.setup {
-"  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-"  highlight = {
-"    enable = true,              -- false will disable the whole extension
-"  },
-"}
-"EOF
+" Configure rust-tools.nvim
+lua << EOF
+local opts = {
+    tools = { -- rust-tools options
+        -- automatically set inlay hints (type hints)
+        -- There is an issue due to which the hints are not applied on the first
+        -- opened file. For now, write to the file to trigger a reapplication of
+        -- the hints or just run :RustSetInlayHints.
+        -- default: true
+        autoSetHints = true,
+
+        -- whether to show hover actions inside the hover window
+        -- this overrides the default hover handler
+        -- default: true
+        hover_with_actions = true,
+
+        runnables = {
+            -- whether to use telescope for selection menu or not
+            -- default: true
+            use_telescope = true
+
+            -- rest of the opts are forwarded to telescope
+        },
+
+        inlay_hints = {
+            -- wheter to show parameter hints with the inlay hints or not
+            -- default: true
+            show_parameter_hints = true,
+
+            -- prefix for parameter hints
+            -- default: "<-"
+            parameter_hints_prefix = "<-",
+
+            -- prefix for all the other hints (type, chaining)
+            -- default: "=>"
+            other_hints_prefix  = "=>",
+
+            -- whether to align to the lenght of the longest line in the file
+            max_len_align = false,
+
+            -- padding from the left if max_len_align is true
+            max_len_align_padding = 1,
+
+            -- whether to align to the extreme right or not
+            right_align = false,
+
+            -- padding from the right if right_align is true
+            right_align_padding = 7,
+        },
+
+        hover_actions = {
+            -- the border that is used for the hover window
+            -- see vim.api.nvim_open_win()
+            border = {
+              {"╭", "FloatBorder"},
+              {"─", "FloatBorder"},
+              {"╮", "FloatBorder"},
+              {"│", "FloatBorder"},
+              {"╯", "FloatBorder"},
+              {"─", "FloatBorder"},
+              {"╰", "FloatBorder"},
+              {"│", "FloatBorder"}
+            },
+        }
+    },
+
+    -- all the opts to send to nvim-lspconfig
+    -- these override the defaults set by rust-tools.nvim
+    -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
+    server = {}, -- rust-analyer options
+}
+
+require('rust-tools').setup(opts)
+EOF
 
 " Enable theming support
 if (has("termguicolors"))
@@ -110,9 +177,9 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 " configure nvcode-color-schemes
 let g:nvcode_termcolors=256
 
+" Syntax highlighting
 syntax enable
 source ~/.config/nvim/jaybee.vim
-"colorscheme justb
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -230,28 +297,10 @@ command! -nargs=0 Org :call     CocAction('runCommand', 'editor.action.organizeI
 " Rust setup
 let g:rustfmt_autosave = 1
 
-" File explorer setup
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Toggle file explorer with Ctrl-b
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
-
-" Disable arrow keys in normal and insert mode
-nnoremap <Up> <nop>
-inoremap <Up> <nop>
-
-nnoremap <Down> <nop>
-inoremap <Down> <nop>
-
-nnoremap <Left> <nop>
-inoremap <Left> <nop>
-
-nnoremap <Right> <nop>
-inoremap <Right> <nop>
-
 " Prompt -> go to buffer
 nnoremap gb :ls<CR>:b<Space>
+
+" Enable Termdebug
+:packadd termdebug
+:let g:termdebugger="gdb"
+:let g:termdebug_wide=1
