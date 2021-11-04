@@ -1,0 +1,9 @@
+[[language]]
+name = "rust"
+language-server = { command = "rust-analyzer" }
+[config]
+cargo.allFeatures = true
+checkOnSave.command = "clippy"
+procMacro.enable = true
+inlayHints.enable = true
+experimental.procAttrMacros = true

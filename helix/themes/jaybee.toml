@@ -1,0 +1,81 @@
+# Author : Gokul Soumya <gokulps15@gmail.com>
+
+"attribute" = { fg = "purple" }
+"comment" = { fg = "light-gray" }
+"constant" = { fg = "teal" }
+"constant.builtin.boolean" = { fg = "pink" }
+"constructor" = { fg = "orange" }
+"escape" = { fg = "gold" }
+"function" = { fg = "orange" }
+"keyword" = { fg = "purple_dark" }
+"keyword.control" = { fg = "pink" }
+"keyword.directive" = { fg = "purple" }
+"label" = { fg = "red" }
+"namespace" = { fg = "brown" }
+"number" = { fg = "green_bright" }
+"operator" = { fg = "red" }
+"property" = { fg = "baby_blue" }
+"special" = { fg = "blue" }
+"string" = { fg = "green_leaf" }
+"string.special.url" = { fg = "green_leaf", modifiers = ["underlined"] }
+"type" = { fg = "blue" }
+"type.builtin" = { fg = "blue" }
+"variable" = { fg = "baby_blue" }
+"variable.builtin" = { fg = "pink_dark" }
+"variable.parameter" = { fg = "blue_light" }
+"punctuation" = { fg = "white" }
+
+diagnostic = { modifiers = ["underlined"] }
+"info" = { fg = "blue", modifiers = ["bold"] }
+"hint" = { fg = "green", modifiers = ["bold"] }
+"warning" = { fg = "yellow", modifiers = ["bold"] }
+"error" = { fg = "red", modifiers = ["bold"] }
+
+"ui.background" = { bg = "black" }
+
+"ui.cursor" = { fg = "white", modifiers = ["reversed"] }
+"ui.cursor.primary" = { fg = "white", modifiers = ["reversed"] }
+"ui.cursor.match" = { fg = "blue", modifiers = ["underlined"]}
+
+"ui.selection" = { bg = "light-gray" }
+"ui.selection.primary" = { bg = "gray" }
+
+"ui.linenr" = { fg = "linenr", modifiers = ["dim"] }
+"ui.linenr.selected" = { fg = "white" }
+
+"ui.statusline" = { fg = "white", bg = "light-black" }
+"ui.statusline.inactive" = { fg = "light-gray", bg = "light-black" }
+
+"ui.text" = { fg = "white" }
+"ui.text.focus" = { fg = "white", bg = "light-black", modifiers = ["bold"] }
+
+"ui.help" = { bg = "gray" }
+"ui.popup" = { bg = "gray" }
+"ui.window" = { bg = "gray" }
+"ui.menu.selected" = { fg = "black", bg = "blue" }
+
+[palette]
+
+yellow = "#E2E6A4"
+blue = "#57ADF3"
+blue_light = "#AAE1FF"
+baby_blue = "#AAE1FF"
+brown = "#BE7660"
+red = "#FA5538"
+purple = "#AD7DA4"
+purple_dark = "#AD86D6"
+pink = "#E9B6DE"
+pink_dark = "#F08CAD"
+orange = "#FFB067"
+green = "#4FC5BB"
+green_leaf = "#89B171"
+green_bright = "#58DAA4"
+gold = "#D19A66"
+cyan = "#56B6C2"
+white = "#ABB2BF"
+black = "#232627"
+light-black = "#2C323C"
+gray = "#3E4452"
+light-gray = "#5C6370"
+teal = "#8AE9E4"
+linenr = "#4B5263"

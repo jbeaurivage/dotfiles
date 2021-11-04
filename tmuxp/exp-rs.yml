@@ -28,3 +28,9 @@ windows:
   - docker-run
   panes:
   - null
+- window_name: bootloader
+  layout: main-vertical
+  shell_command_before:
+  - cd $HOME/uf2-samdx1
+  panes:
+  - null
