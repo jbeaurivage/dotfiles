@@ -13,7 +13,7 @@
 ] @keyword
 
 ((identifier) @variable.builtin
- (#match? @variable.builtin "^(__currentSystem|__currentTime|__nixPath|__nixVersion|__storeDir|builtins|false|null|true)$")
+ (#match? @variable.builtin "^(__currentSystem|__currentTime|__nixPath|__nixVersion|__storeDir|builtins)$")
  (#is-not? local))
 
 ((identifier) @function.builtin
@@ -33,16 +33,19 @@
 
 (uri) @string.special.uri
 
-[
-  (integer)
-  (float)
-] @number
+; boolean
+((identifier) @constant.builtin.boolean (#match? @constant.builtin.boolean "^(true|false)$")) @constant.builtin.boolean
+; null
+((identifier) @constant.builtin (#eq? @constant.builtin "null")) @constant.builtin
+
+(integer) @constant.numeric.integer
+(float) @constant.numeric.float
 
 (interpolation
   "${" @punctuation.special
   "}" @punctuation.special) @embedded
 
-(escape_sequence) @escape
+(escape_sequence) @constant.character.escape
 
 (function
   universal: (identifier) @variable.parameter
@@ -66,8 +69,8 @@
 (binary
   operator: _ @operator)
 
-(attr_identifier) @property
-(inherit attrs: (attrs_inherited (identifier) @property) )
+(attr_identifier) @variable.other.member
+(inherit attrs: (attrs_inherited (identifier) @variable.other.member) )
 
 [
   ";"

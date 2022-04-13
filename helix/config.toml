@@ -1,5 +1,14 @@
 theme = "jaybee"
 
+[editor]
+mouse = false
+idle-timeout = 100
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
 [keys.normal]
 "left" = "no_op"
 "right" = "no_op"
@@ -7,8 +16,4 @@ theme = "jaybee"
 "down" = "no_op"
 
 [keys.insert]
-"left" = "no_op"
-"right" = "no_op"
-"up" = "no_op"
-"down" = "no_op"
 "C-space" = "normal_mode"

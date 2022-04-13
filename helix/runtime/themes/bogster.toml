@@ -8,7 +8,7 @@
 "punctuation.delimiter" = "#dc7759"
 "operator" = { fg = "#dc7759", modifiers = ["bold"] }
 "special" = "#7fdc59"
-"property" = "#c6b8ad"
+"variable.other.member" = "#c6b8ad"
 "variable" = "#c6b8ad"
 "variable.parameter" = "#c6b8ad"
 "type" = "#dc597f"
@@ -22,11 +22,25 @@
 "constant" = "#59dcb7"
 "constant.builtin" = "#59dcb7"
 "string" = "#59dcb7"
-"number" = "#59c0dc"
-"escape" = { fg = "#7fdc59", modifiers = ["bold"] }
+"constant.numeric" = "#59c0dc"
+"constant.character.escape" = { fg = "#7fdc59", modifiers = ["bold"] }
 "label" = "#59c0dc"
 
 "module" = "#d32c5d"
+
+# TODO
+"markup.heading" = "blue"
+"markup.list" = "red"
+"markup.bold" = { fg = "yellow", modifiers = ["bold"] }
+"markup.italic" = { fg = "magenta", modifiers = ["italic"] }
+"markup.link.url" = { fg = "yellow", modifiers = ["underlined"] }
+"markup.link.text" = "red"
+"markup.quote" = "cyan"
+"markup.raw" = "green"
+
+"diff.plus" = "#59dcb7"
+"diff.delta" = "#dc7759"
+"diff.minus" = "#dc597f"
 
 "ui.background" = { bg = "#161c23" }
 "ui.linenr" = { fg = "#415367" }
@@ -42,10 +56,14 @@
 
 "ui.selection" = { bg = "#313f4e" }
 # "ui.cursor.match"  # TODO might want to override this because dimmed is not widely supported
-"ui.cursor.primary" = { fg = "#ABB2BF", modifiers = ["reversed"] }
+"ui.cursor.match" = { fg = "#313f4e", bg = "#dc7759" }
+"ui.cursor" = { fg = "#ABB2BF", modifiers = ["reversed"] }
 "ui.menu.selected" = { fg = "#e5ded6", bg = "#313f4e" }
 
 "warning" = "#dc7759"
 "error" = "#dc597f"
 "info" = "#59dcb7"
 "hint" = "#59c0dc"
+
+# make diagnostic underlined, to distinguish with selection text.
+diagnostic = { modifiers = ["underlined"] }

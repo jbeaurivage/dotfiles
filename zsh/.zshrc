@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/$HOME/.oh-my-zsh"
 
+# Setup zoxide
+eval "$(zoxide init zsh)"
+
 # Enable tmuxp
 export DISABLE_AUTO_TITLE='true'
 
@@ -14,7 +17,7 @@ DEFAULT_USER="true"
 ENABLE_CORRECTION="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git battery cargo invoke jump zsh-syntax-highlighting rustup ssh-agent)
+plugins=(git tmux battery invoke jump zsh-syntax-highlighting rust ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -23,11 +26,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Folder shortcuts
-bbsrc="$HOME/blacbox-gps/blackbox-src"
-bbpcb="$HOME/blackbox-gps/blackbox-pcb"
-
 
 ################
 # User aliases #

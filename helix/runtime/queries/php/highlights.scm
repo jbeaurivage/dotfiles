@@ -5,7 +5,8 @@
 
 (primitive_type) @type.builtin
 (cast_type) @type.builtin
-(type_name (name) @type)
+(named_type (name) @type) @type
+(named_type (qualified_name) @type) @type
 
 ; Functions
 
@@ -30,12 +31,12 @@
 ; Member
 
 (property_element
-  (variable_name) @property)
+  (variable_name) @variable.other.member)
 
 (member_access_expression
-  name: (variable_name (name)) @property)
+  name: (variable_name (name)) @variable.other.member)
 (member_access_expression
-  name: (name) @property)
+  name: (name) @variable.other.member)
 
 ; Variables
 
@@ -56,10 +57,10 @@
 
 (string) @string
 (heredoc) @string
-(boolean) @constant.builtin
+(boolean) @constant.builtin.boolean
 (null) @constant.builtin
-(integer) @number
-(float) @number
+(integer) @constant.numeric.integer
+(float) @constant.numeric.float
 (comment) @comment
 
 "$" @operator
@@ -85,10 +86,12 @@
 "endif" @keyword
 "endswitch" @keyword
 "endwhile" @keyword
+"enum" @keyword
 "extends" @keyword
 "final" @keyword
 "finally" @keyword
 "foreach" @keyword
+"fn" @keyword
 "function" @keyword
 "global" @keyword
 "if" @keyword
@@ -97,6 +100,7 @@
 "include" @keyword
 "insteadof" @keyword
 "interface" @keyword
+"match" @keyword
 "namespace" @keyword
 "new" @keyword
 "private" @keyword

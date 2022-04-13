@@ -34,6 +34,7 @@ diagnostic = { modifiers = ["underlined"] }
 "ui.background" = { bg = "black" }
 
 "ui.cursor" = { fg = "white", modifiers = ["reversed"] }
+"ui.cursor.insert" = { fg = "red", modifiers = ["reversed"] }
 "ui.cursor.primary" = { fg = "white", modifiers = ["reversed"] }
 "ui.cursor.match" = { fg = "blue", modifiers = ["underlined"]}
 
