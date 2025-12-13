@@ -3,17 +3,21 @@ theme = "jaybee"
 [editor]
 mouse = false
 idle-timeout = 100
+indent-guides = { render = true }
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
+[keys.insert]
+"left" = "move_char_left"
+"right" = "move_char_right"
+"up" = "move_line_up"
+"down" = "move_line_down"
+
 [keys.normal]
 "left" = "no_op"
 "right" = "no_op"
 "up" = "no_op"
 "down" = "no_op"
-
-[keys.insert]
-"C-space" = "normal_mode"

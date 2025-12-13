@@ -1,12 +1,17 @@
-[[language]]
-name = "rust"
-language-server = { command = "rust-analyzer" }
-[language.config]
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.rust-analyzer.config]
 cargo.allFeatures = true
-checkOnSave.command = "clippy"
+check = "clippy"
+checkOnSave.extraArgs = ["--target-dir", "target/rust-analyzer"]
 procMacro.enable = true
 inlayHints.enable = true
 experimental.procAttrMacros = true
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
 
 [language.auto-pairs]
 '(' = ')'

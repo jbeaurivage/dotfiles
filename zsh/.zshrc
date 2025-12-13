@@ -16,8 +16,12 @@ DEFAULT_USER="true"
 # Enable command auto-correction.
 ENABLE_CORRECTION="true"
 
+# Only enable autocorrect for commands, and not subcommands
+unsetopt CORRECT_ALL
+setopt CORRECT
+
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git tmux battery invoke jump zsh-syntax-highlighting rust ssh-agent)
+plugins=(git tmux battery invoke jump zsh-syntax-highlighting rust ssh-agent kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,9 +35,8 @@ source $ZSH/oh-my-zsh.sh
 # User aliases #
 ################
 
-# Zypper
-alias zyp="zypper"
-alias sz="sudo zypper"
+alias kc="kubectl"
+alias zj="zellij"
 
 # rm and ls
 alias rmi="rm -i"
@@ -58,6 +61,9 @@ bindkey '^L' push-line
 # clear
 alias c="clear"
 
+# just
+alias j="just"
+
 # dir shortcuts
 
 # Colorize grep
@@ -75,34 +81,15 @@ alias publicip="curl icanhazip.com"
 # Disable autocorrect
 alias cargo="nocorrect cargo"
 
-# apps
-function kt(){
-    kate $1 &>/dev/null &
-}
-
-function skt(){
-    kdesu kate $1 &>/dev/null &
-}
-
 function o(){
     xdg-open $1 &>/dev/null &
 }
 
 alias op="dolphin . &>/dev/null &"
 
-alias zshconfig="nvim ~/.zshrc"
-alias vimconfig="nvim ~/.config/nvim/init.vim"
-
-
-# Change vim path
-alias svim='sudo vim'
-alias snano='sudo nano'
-alias nv='nvim'
-alias snv='sudo nv'
-
 # Editors
-export GIT_EDITOR=nvim
-export VISUAL=nvim
+export GIT_EDITOR=hx
+export VISUAL=hx
 export EDITOR="$VISUAL"
 
 # mkdir auto cd
@@ -117,3 +104,7 @@ function cdir (){
 
 # Enable VIM mode in zsh
 bindkey -v
+
+# zellij
+eval "$(zellij setup --generate-auto-start zsh)"
+. "$HOME/.cargo/env"
