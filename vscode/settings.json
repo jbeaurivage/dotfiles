@@ -1,0 +1,312 @@
+{
+  // General editor settings
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "[Default Dark+]": {
+      "enabled": true,
+      "rules": {
+        "builtinType": "#57adf3", // j_blue
+        "comment": "#9a9ca3", // j_gray
+        "enum": "#57adf3", // j_blue
+        "enumMember": "#e2e6a4", // j_yellow_light
+        "formatSpecifier": "#6abfca", // j_green_light
+        "function.attribute": "#ad7da4", // j_purple
+        "function": "#ffb067", // j_orange
+        "interface": "#4fc5bb", // j_green
+        "keyword.controlFlow": "#e083cc", // j_pink
+        "keyword": "#ad86d6", // j_purple_dark
+        "macro": "#fa7f38", // j_orange_bright
+        "namespace": "#be7660", // j_brown
+        "number": "#58daa4", // j_green_bright
+        "operator": "#fa5538", // j_red
+        "parameter.mutable": {
+          "underline": false
+        },
+        "parameter": "#aae1ff", // j_blue_light
+        "punctuation.injected": "#D4D4D4", // j_gray_light
+        "selfKeyword.mutable": {
+          "underline": false
+        },
+        "selfKeyword": "#f08cad", // j_pink_dark
+        "string": "#89b171", // j_green_leaf
+        "struct": "#57adf3",
+        "typeAlias": "#57adf3",
+        "typeParameter": "#57adf3",
+        "union": "#57adf3",
+        "unresolvedReference": "#accfcf",
+        "variable.mutable": {
+          "underline": false
+        },
+        "variable.static": "#8ae9e4", // j_teal
+        "variable": "#aae1ff", // j_baby_blue
+        "*.unsafe:rust": "#ff0000" // j_bright_red
+      }
+    }
+  },
+
+  "editor.tokenColorCustomizations": {
+    "[Default Dark+]": {
+      "comments": "#9a9ca3",
+      "functions": "#ffb067",
+      "keywords": "#ad86d6",
+      "numbers": "#58daa4",
+      "strings": "#89b171",
+      "textMateRules": [
+        {
+          "scope": "meta.type_params.rust",
+          "settings": {
+            "foreground": "#57adf3",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": "entity.name.type.core.rust",
+          "settings": {
+            "foreground": "#4fc5bb", // j_teal_2
+            "fontStyle": ""
+          }
+        }
+      ],
+      "types": "#57adf3",
+      "variables": "#aae1ff"
+    }
+  },
+
+  "workbench.colorCustomizations": {
+    "editor.inlayHints.fontFamily": "Courier New",
+    "editor.inlayHints.fontSize": 11,
+    "[Default Dark+]": {
+      "editorInlayHint.foreground": "#868686f0",
+      "editorInlayHint.background": "#ff000000",
+      "editorInlayHint.typeForeground": "#aaa5aaf0",
+      "editorInlayHint.parameterForeground": "#fdb6fdf0"
+    }
+  },
+
+  "editor.renderWhitespace": "all",
+  "editor.fontFamily": "'JetBrains Mono', 'monaco-ttf', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontLigatures": true,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  // "editor.guides.bracketPairs": "active",
+  // "editor.rulers": [80],
+  "explorer.autoReveal": false,
+  // "workbench.editor.showTabs": false,
+  "workbench.editor.enablePreview": true,
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": true,
+
+  // Files
+  "files.associations": {
+    "config": "toml",
+    "*.XPD": "csv",
+    "*.xpd": "csv",
+    "*.Rmd": "rmd"
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "/target/**": true
+  },
+
+  "debug.onTaskErrors": "abort",
+  "debug.allowBreakpointsEverywhere": false,
+
+  // Cortex-debug
+  "cortex-debug.enableTelemetry": false,
+  "cortex-debug.armToolchainPath": "/bin/",
+  "cortex-debug.armToolchainPrefix": "arm-none-eabi",
+  "cortex-debug.openocdPath": "/bin/openocd",
+
+  // Rust settings
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+  },
+
+  "[veryl]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+
+  "[typst]": {
+    "editor.formatOnSave": true,
+    // "editor.detectIndentation": false,
+    // "editor.insertSpaces": false,
+    // "editor.formatOnSave": false
+  },
+
+  // Rust Analyzer
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.inlayHints.maxLength": null,
+  "rust-analyzer.procMacro.attributes.enable": true,
+
+  // Todo tree
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "@TODO",
+    "KEEP"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+
+   "todo-tree.highlights.customHighlight": {
+        "KEEP": {
+            "icon": "tools",
+            "background": "#39073c"
+        }
+    },
+
+  // Error lens
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "hint"],
+
+  // Vim
+  "vim.useCtrlKeys": false,
+  "vim.autoindent": true,
+  "vim.useSystemClipboard": true,
+  "vim.leader": ",",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    {
+      "before": ["[", "<space>"],
+      "commands": ["editor.action.insertLineBefore"]
+    },
+    {
+      "before": ["]", "<space>"],
+      "commands": ["editor.action.insertLineAfter"]
+    },
+    {
+        "before": ["="],
+        "commands": ["editor.action.formatSelection"]
+    },
+    {
+      "before": ["t", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["t", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["t", "w"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["t", "j"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["t", "k"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["<space>", "k"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<space>", "a"],
+      "commands": ["editor.action.codeAction"]
+    },
+    {
+        "before": ["<space>", "b"],
+        "commands": ["workbench.action.showAllEditors"]
+    },
+    {
+        "before": ["<space>", "f"],
+        "commands": ["workbench.action.quickOpen"]
+    },
+    {
+        "before": ["<space>", "r"],
+        "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["editor.action.peekTypeDefinition"]
+    },
+    {
+      "before": ["<leader>", "g"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["rust-analyzer.run"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [],
+  "workbench.startupEditor": "none",
+  "latex-workshop.docker.enabled": true,
+  "latex-workshop.docker.image.latex": "blang/latex:ubuntu",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "workbench.colorTheme": "Default Dark+",
+  "semanticdiff.diff.contextLines": 5,
+  "semanticdiff.diff.compareMovedCode": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "Cargo.toml": "Cargo.lock"
+  },
+  "lldb.suppressUpdateNotifications": true,
+
+  "window.titleBarStyle": "custom",
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  
+  "telemetry.telemetryLevel": "crash",
+  "editor.inlineSuggest.enabled": false,
+  "cmake.showOptionsMovedNotification": false,
+  "hexeditor.columnWidth": 16,
+  "hexeditor.showDecodedText": true,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+
+  // Tinymist (Typst)
+  "tinymist.formatterProseWrap": true,
+  "tinymist.formatterPrintWidth": 100,
+  "git.blame.editorDecoration.enabled": false,
+}
