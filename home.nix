@@ -32,10 +32,9 @@
 
   home.sessionPath = [
     "$HOME/.cargo/bin"
-    # User scripts
-    "$HOME/bin"
   ];
 
+  # Common packages and fonts that don't need extra config
   home.packages = with pkgs; [
     htop
     bat
@@ -66,7 +65,8 @@
     ./packages/helix/helix.nix
     ./packages/zsh/zsh.nix
     ./packages/git/git.nix
-    ./packages/zellij/zellij.nix
+    ./scripts/merge-pdf/merge-pdf.nix
+    ./scripts/trim-mp4/trim-mp4.nix
   ];
 
 }
