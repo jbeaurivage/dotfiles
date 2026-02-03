@@ -148,6 +148,10 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
 
+  "[nix]": {
+    "editor.formatOnSave": true,
+  },
+
   "[typst]": {
     "editor.formatOnSave": true,
     // "editor.detectIndentation": false,
