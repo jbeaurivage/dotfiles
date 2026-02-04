@@ -60,6 +60,7 @@ in
         "lsa" = "ls -1FG";
         "lsl" = "ls -l";
         "lsaa" = "ls -a1FG";
+        "lsal" = "ls -al1FG";
         "op" = "dolphin . &>/dev/null &";
       };
 
