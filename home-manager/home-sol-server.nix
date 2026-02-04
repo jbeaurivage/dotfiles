@@ -4,11 +4,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  services.ssh-agent = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -17,25 +12,12 @@
 
   fonts.fontconfig.enable = true;
 
-  home.sessionVariables = {
-    # Enable xdg-portal for native file browser (e.g. firefox)
-    GTK_USE_PORTAL = 1;
-  };
-
-  home.sessionPath = [
-    "$HOME/.cargo/bin"
-  ];
-
   # Common packages and fonts that don't need extra config
   home.packages = with pkgs; [
     htop
     bat
     fd
     ripgrep
-    just
-    bacon
-    nixfmt
-    jetbrains-mono
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -57,8 +39,11 @@
     ./packages/helix/helix.nix
     ./packages/zsh/zsh.nix
     ./packages/git/git.nix
-    ./scripts/merge-pdf/merge-pdf.nix
-    ./scripts/trim-mp4/trim-mp4.nix
   ];
+
+  zshCustomizations = {
+    interactiveDesktop = false;
+    theme = "bira";
+  };
 
 }

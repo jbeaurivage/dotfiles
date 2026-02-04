@@ -36,7 +36,7 @@
                 stateVersion = "25.11";
               };
             }
-            ./home.nix
+            ./home-manager/home.nix
           ];
 
         };
@@ -53,7 +53,24 @@
                 stateVersion = "25.11";
               };
             }
-            ./home.nix
+            ./home-manager/home.nix
+          ];
+        };
+
+        # sol is the user in our server host
+        "sol" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [
+            {
+              home = {
+                username = "sol";
+                homeDirectory = "/home/sol";
+                # Don't change this value
+                stateVersion = "25.11";
+              };
+            }
+            ./home-manager/home-sol-server.nix
           ];
         };
 
