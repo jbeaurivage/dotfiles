@@ -17,15 +17,46 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."justinb" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations = {
+        "justinb" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
+          # Optionally use extraSpecialArgs
+          # to pass through arguments to home.nix
+          # extraSpecialArgs = { };
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+          modules = [
+            {
+              home = {
+                # Home Manager needs a bit of information about you and the paths it should
+                # manage.
+                username = "justinb";
+                homeDirectory = "/home/justinb";
+                # Don't change this value
+                stateVersion = "25.11";
+              };
+            }
+            ./home.nix
+          ];
+
+        };
+
+        "wearable-avionics" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [
+            {
+              home = {
+                username = "wearable-avionics";
+                homeDirectory = "/home/wearable-avionics";
+                # Don't change this value
+                stateVersion = "25.11";
+              };
+            }
+            ./home.nix
+          ];
+        };
+
       };
     };
 }
