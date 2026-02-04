@@ -15,17 +15,24 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      user = {
+        username = "wearable-avionics";
+        homeDirectory = "/home/wearable-avionics";
+      };
     in
     {
-      homeConfigurations."justinb" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${user.username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [ ../../home.nix ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          user = user;
+        };
       };
     };
 }
