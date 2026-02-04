@@ -66,4 +66,7 @@
     theme = "agnoster";
   };
 
+  # Don't change this value without a very good reason
+  home.stateVersion = "25.11";
+
 }

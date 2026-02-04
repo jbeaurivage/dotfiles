@@ -69,8 +69,6 @@
                 # manage.
                 username = "justinb";
                 homeDirectory = "/home/justinb";
-                # Don't change this value
-                stateVersion = "25.11";
               };
             }
             ./home-manager/home.nix
@@ -86,8 +84,6 @@
               home = {
                 username = "wearable-avionics";
                 homeDirectory = "/home/wearable-avionics";
-                # Don't change this value
-                stateVersion = "25.11";
               };
             }
             ./home-manager/home.nix
