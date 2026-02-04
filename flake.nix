@@ -39,6 +39,15 @@
             # Our main nixos configuration file
             # This is the file where we compartmentalize the changes we want to make on a system level
             ./system/sol-server/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.sol = ./home-manager/home-sol-server.nix;
+
+              # Optionally, use home-manager.extraSpecialArgs to pass
+              # arguments to home.nix
+            }
           ];
         };
       };
@@ -82,22 +91,6 @@
               };
             }
             ./home-manager/home.nix
-          ];
-        };
-
-        "sol" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [
-            {
-              home = {
-                username = "sol";
-                homeDirectory = "/home/sol";
-                # Don't change this value
-                stateVersion = "25.11";
-              };
-            }
-            ./home-manager/home-sol-server.nix
           ];
         };
 
