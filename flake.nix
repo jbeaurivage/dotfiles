@@ -11,12 +11,40 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs: # <- this `@inputs` will expose the block of code below, to the inputs that you set above.
     let
+      # ---- System Settings ---- #
       system = "x86_64-linux";
+      locale = "en_CA.UTF-8";
+      timezone = "America/Toronto";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      # This is the section of the `flake.nix` that is responsible for importing and configuring the `configuration.nix`
+      nixosConfigurations = {
+        sol-server = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = {
+            # `inherit` is used to pass the variables set in the above "let" statement into our configuration.nix file below
+            inherit inputs timezone locale;
+          };
+
+          modules = [
+            # Our main nixos configuration file
+            # This is the file where we compartmentalize the changes we want to make on a system level
+            ./system/sol-server/configuration.nix
+          ];
+        };
+      };
+
+      # home-manager configuration entrypoint
+      # Available through 'home-manager --flake .
       homeConfigurations = {
         "justinb" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -57,7 +85,6 @@
           ];
         };
 
-        # sol is the user in our server host
         "sol" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 

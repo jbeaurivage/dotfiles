@@ -1,0 +1,19 @@
+{ pkgs, ... }:
+{
+  virtualisation.docker = {
+    # disable system-wide Docker daemon
+    enable = true;
+    
+    # rootless = {
+    #  enable = true;
+    #  setSocketVariable = true;
+    # };
+
+    storageDriver = "btrfs";
+    
+  };
+
+  # Either have docker run in rootless mode (see above)
+  # or add the "sol" user to the "docker" group
+  users.extraGroups.docker.members = [ "sol" ];
+}
