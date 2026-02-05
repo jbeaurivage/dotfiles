@@ -4,12 +4,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
-
   fonts.fontconfig.enable = true;
 
   # Common packages and fonts that don't need extra config

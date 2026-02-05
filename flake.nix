@@ -25,6 +25,9 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+
+      nixpkgs.config.allowUnfree = true;
+
       # This is the section of the `flake.nix` that is responsible for importing and configuring the `configuration.nix`
       nixosConfigurations = {
         sol-server = nixpkgs.lib.nixosSystem {
