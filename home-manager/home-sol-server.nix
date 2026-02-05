@@ -36,9 +36,11 @@
   };
 
   imports = [
+    ./packages/git.nix
+    ./packages/nh.nix
+
     ./packages/helix/helix.nix
     ./packages/zsh/zsh.nix
-    ./packages/git/git.nix
   ];
 
   zshCustomizations = {
