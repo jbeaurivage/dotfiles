@@ -60,6 +60,7 @@
     ./packages/helix/helix.nix
     ./packages/zsh/zsh.nix
     ./packages/kde/kde-plasma.nix
+    ./packages/vscode/vscode.nix
 
     ./scripts/scripts.nix
   ];

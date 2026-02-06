@@ -135,7 +135,7 @@
 
   "[javascript]": {
     "editor.formatOnSave": true,
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
 
   "[veryl]": {
@@ -149,11 +149,11 @@
   },
 
   "[nix]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
 
   "[typst]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
     // "editor.detectIndentation": false,
     // "editor.insertSpaces": false,
     // "editor.formatOnSave": false
@@ -312,5 +312,5 @@
   // Tinymist (Typst)
   "tinymist.formatterProseWrap": true,
   "tinymist.formatterPrintWidth": 100,
-  "git.blame.editorDecoration.enabled": false,
+  "git.blame.editorDecoration.enabled": false
 }
