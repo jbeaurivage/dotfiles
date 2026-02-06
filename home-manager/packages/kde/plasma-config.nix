@@ -146,11 +146,15 @@
       "services/org.kde.plasma.emojier.desktop"._launch = "Meta+Ctrl+Alt+Shift+Space";
       "services/org.kde.spectacle.desktop"._launch = "Print";
     };
+
     configFile = {
       dolphinrc.General.DoubleClickViewAction = "none";
       dolphinrc.General.RememberOpenedTabs = false;
       kcminputrc.Keyboard.NumLock = 0;
+
+      kdeGlobals.General.ColorScheme = "BreezeDark";
       kdeglobals.General.AccentColor = "61,174,233";
+      kdeGlobals.Icons.Theme = "breeze-dark";
 
       kdeglobals.General.fixed = "Hack,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
       kdeglobals.General.font = "Noto Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
