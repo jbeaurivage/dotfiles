@@ -83,8 +83,8 @@ in
         {
           enable = true;
           enableZshIntegration = true;
-          attachExistingSession = true;
-          exitShellOnExit = true;
+          # attachExistingSession = true;
+          # exitShellOnExit = true;
         }
       else
         { enable = false; };

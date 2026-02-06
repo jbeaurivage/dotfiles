@@ -4,9 +4,16 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 
@@ -15,6 +22,7 @@
       self,
       nixpkgs,
       home-manager,
+      plasma-manager,
       ...
     }@inputs: # <- this `@inputs` will expose the block of code below, to the inputs that you set above.
     let
@@ -66,6 +74,9 @@
           # extraSpecialArgs = { };
 
           modules = [
+            inputs.plasma-manager.homeModules.plasma-manager
+            ./home-manager/home.nix
+
             {
               home = {
                 # Home Manager needs a bit of information about you and the paths it should
@@ -74,7 +85,6 @@
                 homeDirectory = "/home/justinb";
               };
             }
-            ./home-manager/home.nix
           ];
 
         };
@@ -89,6 +99,7 @@
                 homeDirectory = "/home/wearable-avionics";
               };
             }
+            inputs.plasma-manager.homeModules.plasma-manager
             ./home-manager/home.nix
           ];
         };

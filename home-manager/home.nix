@@ -59,9 +59,9 @@
 
     ./packages/helix/helix.nix
     ./packages/zsh/zsh.nix
+    ./packages/kde/kde-plasma.nix
 
-    ./scripts/merge-pdf/merge-pdf.nix
-    ./scripts/trim-mp4/trim-mp4.nix
+    ./scripts/scripts.nix
   ];
 
   zshCustomizations = {
