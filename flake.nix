@@ -54,7 +54,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.sol = ./home-manager/home-sol-server.nix;
+              home-manager.users.sol = ./home/home-sol-server.nix;
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
@@ -75,7 +75,7 @@
 
           modules = [
             inputs.plasma-manager.homeModules.plasma-manager
-            ./home-manager/home.nix
+            ./home/home.nix
 
             {
               home = {
@@ -100,7 +100,7 @@
               };
             }
             inputs.plasma-manager.homeModules.plasma-manager
-            ./home-manager/home.nix
+            ./home/home.nix
           ];
         };
 
