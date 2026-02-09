@@ -5,6 +5,10 @@ size = 12.0
 family = "JetBrains Mono"
 style = "Regular"
 
+[window]
+opacity = 1.0
+padding = { x = 10, y = 4 }
+
 [keyboard]
 bindings = [
     { key = "q", mods = "Control", action = "Quit" },
