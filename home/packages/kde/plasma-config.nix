@@ -141,7 +141,8 @@
 
       "services/code-oss.desktop"._launch = "Meta+C";
       "services/firefox.desktop"._launch = "Meta+Z";
-      "services/org.kde.konsole.desktop"._launch = "Meta+X";
+      # "services/org.kde.konsole.desktop"._launch = "Meta+X";
+      "services/Alacritty.desktop"._launch = "Meta+X";
       "services/org.kde.krunner.desktop"._launch = "Meta+Space";
       "services/org.kde.plasma.emojier.desktop"._launch = "Meta+Ctrl+Alt+Shift+Space";
       "services/org.kde.spectacle.desktop"._launch = "Print";

@@ -4,6 +4,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Integrate better with non-NixOS systems
+  targets.genericLinux.enable = true;
+
   services.ssh-agent = {
     enable = true;
     enableZshIntegration = true;
@@ -57,6 +60,7 @@
     ./packages/git.nix
     ./packages/nh.nix
 
+    ./packages/alacritty/alacritty.nix
     ./packages/helix/helix.nix
     ./packages/zsh/zsh.nix
     ./packages/kde/kde-plasma.nix
