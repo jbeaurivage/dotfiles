@@ -312,5 +312,8 @@
   // Tinymist (Typst)
   "tinymist.formatterProseWrap": true,
   "tinymist.formatterPrintWidth": 100,
-  "git.blame.editorDecoration.enabled": false
+  "git.blame.editorDecoration.enabled": false,
+
+  // Disable agent mode
+  "chat.agent.enabled": false
 }
