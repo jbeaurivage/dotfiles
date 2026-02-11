@@ -7,10 +7,15 @@ style = "Regular"
 
 [window]
 opacity = 1.0
-padding = { x = 10, y = 4 }
+padding = { x = 0, y = 0 }
 
 [keyboard]
 bindings = [
     { key = "q", mods = "Control", action = "Quit" },
 ]
 
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
+mouse.enabled = true
+mouse.mods = "Control"
